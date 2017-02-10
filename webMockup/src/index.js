@@ -14,7 +14,7 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Main}/>
-      <Route path="/search/:id" component={Search} />
+      <Route path="/search/:value" component={Search} />
       <Route path="about" component={About}/>
     </Route>
   </Router>,
