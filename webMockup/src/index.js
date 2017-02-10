@@ -2,13 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-
 import App from './App';
 import Main from './components/pages/Main';
 import Search from './components/pages/Search';
 import About from './components/pages/About';
-
-
+import NotFound from './components/pages/NotFound';
 
 ReactDOM.render(
   <Router history={browserHistory}>
@@ -16,6 +14,7 @@ ReactDOM.render(
       <IndexRoute component={Main}/>
       <Route path="/search/:value" component={Search} />
       <Route path="about" component={About}/>
+      <Route path="*" component={NotFound}/>
     </Route>
   </Router>,
   document.getElementById('root')
