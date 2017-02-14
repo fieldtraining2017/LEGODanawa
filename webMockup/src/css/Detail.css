@@ -1,0 +1,22 @@
+.detailView {
+  padding: 20px 10px 0 10px;
+  display: table;
+}
+.img {
+  display: table-cell;
+  text-align: center;
+  vertical-align: top;
+  width: 200px;
+}
+.detail {
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 10px;
+}
+.title {
+  font-size: 25px;
+  font-weight: bold;
+}
+.spec {
+  font-size: 15px;
+}
