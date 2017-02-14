@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class SearchList extends React.Component {
 
@@ -15,9 +16,10 @@ class SearchList extends React.Component {
   }
 
   render(){
+    let DetailURL = "/detail/" + this.props.value;
     return (
       <div>
-        this.props.value : {this.props.value}
+        this.props.value : <Link to={DetailURL}>{this.props.value}</Link>
       </div>
     );
   }
