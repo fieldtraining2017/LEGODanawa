@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
+import './../css/SearchList.css';
 
 class SearchList extends React.Component {
 
@@ -7,21 +8,43 @@ class SearchList extends React.Component {
 
     let tryAjax = () => {
         var req = '/api/search/' + this.props.value;
-        // axios.get(req).then(response => {
-        //     this.setState({value:response.data});
-        // });
+        // 정보 가져오기
     }
 
     tryAjax();
   }
 
   render(){
-    let DetailURL = "/detail/" + this.props.value;
     return (
       <div>
-        this.props.value : <Link to={DetailURL}>{this.props.value}</Link>
+        <h1>검색결과 : {this.props.value}</h1>
+        
+        <ul>
+          <li><Row value={this.props.value}/></li>
+          <li><Row value={this.props.value}/></li>
+          <li><Row value={this.props.value}/></li>
+        </ul>
       </div>
     );
+  }
+}
+
+class Row extends Component {
+  render() {
+    var detailURL = "/detail/" + this.props.value;
+    return (
+      <div className="row">
+        <div className="img">
+          <Link to={detailURL}><img src="https://dummyimage.com/130x130"/></Link>
+        </div>
+        <div className="name">
+          <p>
+            <Link to={detailURL}>{this.props.value}</Link>
+          </p>
+        </div>
+      </div>
+    )
+
   }
 }
 
