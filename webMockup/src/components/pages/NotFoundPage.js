@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
-
 import './../../css/btn.css';
 
 class NotFound extends React.Component {
