@@ -4,14 +4,13 @@ import axios from 'axios';
 
 import './../css/SearchList.css';
 
-let server = 'http://192.168.0.36:1337';
+let server = 'http://0.0.0.0:1337';
 
 class SearchList extends React.Component {
 
   componentDidMount() {
     let tryAjax = () => {
       var page = 1;
-      var search = '3 X 4';
       var req = server + '/parts?page=' + page + '&search=' + this.props.value;
 
       axios.get(req).then(response => {
@@ -51,7 +50,18 @@ class SearchList extends React.Component {
 
 class Row extends Component {
   render() {
-    var detailURL = "/detail/" + this.props.obj.part_num;
+    var imgUrlSplit = null;
+    if(this.props.obj.part_img_url !== null) {
+      imgUrlSplit = JSON.stringify(this.props.obj.part_img_url).split("/")[6].split(".")[0];
+    } else {
+      imgUrlSplit = null
+    }
+      console.log(imgUrlSplit);
+
+    var detailURL =
+      "/detail/name=" + encodeURIComponent(this.props.obj.name) +
+      "&part_num=" + this.props.obj.part_num +
+      "&part_img_num=" + imgUrlSplit;
     return (
       <li className="row">
         <div className="img">

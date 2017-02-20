@@ -15,21 +15,26 @@ class Detail extends React.Component {
   }
 
   render(){
+    var imgUrl = null;
+    console.log(this.props)
+    if (this.props.partimgnum !== "null") {
+      imgUrl = "https://m.rebrickable.com/media/parts/elements/" + this.props.partimgnum + ".jpg"
+    } else {
+      imgUrl = "https://dummyimage.com/200x200";
+    }
+
     return (
       <div className="detailView">
-        <div className="img">
-          <img src="https://dummyimage.com/180x180"/>
+        <div className="detail_img">
+          <img src={imgUrl}/>
         </div>
         <div className="detail">
-          <div className="title">
+          <div className="detail_title">
             <p>
-              {this.props.id}
+              {this.props.partnum} : {this.props.name}
             </p>
           </div>
-          <div className="spec">
-            <p>
-              스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙스펙
-            </p>
+          <div className="detail_spec">
           </div>
         </div>
       </div>

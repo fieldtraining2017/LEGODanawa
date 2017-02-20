@@ -14,7 +14,7 @@ ReactDOM.render(
     <Route path="/" component={App}>
       <IndexRoute component={Main}/>
       <Route path="/search/:value" component={Search}/>
-      <Route path="/detail/:id" component={Detail}/>
+      <Route path="/detail/name=:name&part_num=:partnum&part_img_num=:partimgurl" component={Detail}/>
       <Route path="about" component={About}/>
       <Route path="*" component={NotFound}/>
     </Route>
