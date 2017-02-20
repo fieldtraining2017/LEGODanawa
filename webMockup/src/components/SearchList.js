@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import axios from 'axios';
 
 import './../css/SearchList.css';
+
+let server = 'http://192.168.0.36:1337';
 
 class SearchList extends React.Component {
 
   componentDidMount() {
     let tryAjax = () => {
-      // Ajax 요청 - axios -> List<obj[option]>{id, title, img}
-      // var req = "/api/getList:value(title)" -> ex
-      // axios.get(req).then(response => {
-      //   this.setState({value:response.data});
-      // });
+      var page = 1;
+      var search = '3 X 4';
+      var req = server + '/parts?page=' + page + '&search=' + this.props.value;
+
+      axios.get(req).then(response => {
+        this.setState({value: response.data});
+        console.log(this.state.value.results);
+      });
 
       // Sets View / Parts View 나눌 것!!!
       // ex)
@@ -23,34 +29,40 @@ class SearchList extends React.Component {
   }
 
   render(){
-    return (
-      <div>
-        <h1>검색결과 : {this.props.value}</h1>
-
-        <ul>
-          <li><Row value={this.props.value}/></li>
-          <li><Row value={this.props.value}/></li>
-          <li><Row value={this.props.value}/></li>
-        </ul>
-      </div>
-    );
+    if (this.state && this.state.value){
+  		var rtn = this.state.value.results.map(function(object, i){
+  			return <Row obj={object} key={i} />;
+  		});
+  		return (
+        <div>
+          <h1>검색결과 : {this.props.value}</h1>
+          <ul>
+    				{rtn}
+          </ul>
+        </div>
+  		);
+	  } else {
+  		return (
+  			<div>로딩로딩</div>
+  		);
+  	}
   }
 }
 
 class Row extends Component {
   render() {
-    var detailURL = "/detail/" + this.props.value;
+    var detailURL = "/detail/" + this.props.obj.part_num;
     return (
-      <div className="row">
+      <li className="row">
         <div className="img">
-          <Link to={detailURL}><img src="https://dummyimage.com/130x130"/></Link>
+          <Link to={detailURL}><img src={this.props.obj.part_img_url}/></Link>
         </div>
         <div className="name">
           <p>
-            <Link to={detailURL}>{this.props.value}</Link>
+            <Link to={detailURL}>{this.props.obj.name}</Link>
           </p>
         </div>
-      </div>
+      </li>
     )
 
   }

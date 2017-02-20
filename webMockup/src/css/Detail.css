@@ -2,7 +2,7 @@
   padding: 20px 10px 0 10px;
   display: table;
 }
-.img {
+.detail_img {
   display: table-cell;
   text-align: center;
   vertical-align: top;
@@ -13,10 +13,10 @@
   vertical-align: top;
   padding-left: 10px;
 }
-.title {
+.detail_title {
   font-size: 25px;
   font-weight: bold;
 }
-.spec {
+.detail_spec {
   font-size: 15px;
 }

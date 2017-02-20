@@ -6,15 +6,20 @@ li {
   padding: 10px 0 10px 0;
   border-bottom: 1px solid #e6e6e6;
 }
+.img {
+  display: table-cell;
+  width: 100px;
+  height: 100px;
+}
+.img img{
+  text-align: center;
+  vertical-align: top;
+  width: 100px;
+  height: 100px;
+}
 .row {
   display: table;
   width: 100%;
-}
-.img {
-  display: table-cell;
-  text-align: center;
-  vertical-align: top;
-  width: 150px;
 }
 .name {
   display: table-cell;
