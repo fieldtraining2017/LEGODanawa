@@ -1,3 +1,11 @@
+h3 {
+  display: inline;
+}
+
+label {
+  padding: 0 20px 0 20px;
+}
+
 .searchBar{
   position:absolute;
   top:30%;
