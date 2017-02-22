@@ -14,7 +14,6 @@ class SearchList extends React.Component {
 
       axios.get(req).then(response => {
         this.setState({value: response.data});
-        console.log(this.state.value.results);
       });
     }
 
@@ -57,7 +56,6 @@ class Row extends Component {
     var imgnum;
 
     if(imgSrc !== null) {
-      console.log(imgSrc);
       imgnum = JSON.stringify(imgSrc).split("/")[isSets ? 5 : 6].split(".")[0];
     } else {
       imgnum = null;

@@ -1,23 +1,68 @@
-.detailView {
-  padding: 20px 10px 0 10px;
-  display: table;
+.detail {
+  margin: 20px 20px 0 20px;
+  width: 100%;
 }
+
 .detail_img {
-  display: table-cell;
+  display: inline-block;;
   text-align: center;
   vertical-align: top;
   width: 200px;
   height: 200px;
 }
-.detail {
-  display: table-cell;
-  vertical-align: middle;
-  padding-left: 10px;
+
+.detail_img img {
+  width: 200px;
+  height: 200px;
 }
+
 .detail_title {
+  margin: 50px 0 0 20px;
+  display: inline-block;
   font-size: 25px;
   font-weight: bold;
 }
-.detail_spec {
-  font-size: 15px;
+
+.view_sellers {
+  margin: 20px 20px 0 0;
+}
+
+.tg {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-color: #aaa;
+    border: none;
+    width: 100%;
+}
+
+.tg td {
+    padding: 20px 5px;
+    border-style: solid;
+    border-width: 0px;
+    overflow: hidden;
+    word-break: normal;
+    border-color: #aaa;
+    border-bottom: 1px solid #495057;
+    color: #333;
+    background-color: #fff;
+    text-align: center;
+}
+
+.tg th {
+    font-weight: normal;
+    padding: 20px 5px;
+    border-style: solid;
+    border-width: 0px;
+    overflow: hidden;
+    word-break: normal;
+    border-color: #aaa;
+    color: #fff;
+    background-color: #212529;
+    transition: background-color 0.3s;
+}
+
+.tg th:hover {
+    background-color: #495057;
 }
