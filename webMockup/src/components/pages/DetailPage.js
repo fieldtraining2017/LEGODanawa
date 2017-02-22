@@ -5,7 +5,7 @@ class DetailPage extends React.Component {
   render(){
     return (
       <div>
-        <Detail name={this.props.params.name} partnum={this.props.params.partnum} partimgnum={this.props.params.partimgurl}/>
+        <Detail div={this.props.params.div} name={this.props.params.name} num={this.props.params.num} imgnum={this.props.params.imgurl}/>
       </div>
     );
   }

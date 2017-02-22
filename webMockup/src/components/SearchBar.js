@@ -25,7 +25,7 @@ class SearchBar extends React.Component {
 
     this.setState({value: value});
     if(value !== "") {
-      searchURL = "/search/" + this.state.search + "?" + value;
+      searchURL = "/search/" + this.state.search + "/" + value;
     } else {
       searchURL = null;
     }

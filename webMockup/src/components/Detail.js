@@ -17,8 +17,8 @@ class Detail extends React.Component {
   render(){
     var imgUrl = null;
     console.log(this.props)
-    if (this.props.partimgnum !== "null") {
-      imgUrl = "https://m.rebrickable.com/media/parts/elements/" + this.props.partimgnum + ".jpg"
+    if (this.props.imgnum !== "null") {
+      imgUrl = "https://m.rebrickable.com/media/parts/elements/" + this.props.imgnum + ".jpg"
     } else {
       imgUrl = "https://dummyimage.com/200x200";
     }
@@ -31,7 +31,7 @@ class Detail extends React.Component {
         <div className="detail">
           <div className="detail_title">
             <p>
-              {this.props.partnum} : {this.props.name}
+              {this.props.num} : {this.props.name}
             </p>
           </div>
           <div className="detail_spec">

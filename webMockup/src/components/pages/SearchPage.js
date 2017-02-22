@@ -5,7 +5,7 @@ class Search extends React.Component {
   render(){
     return (
       <div>
-        <SearchList value={this.props.params.value}/>
+        <SearchList div={this.props.params.div} value={this.props.params.value}/>
       </div>
     );
   }
